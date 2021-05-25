@@ -113,3 +113,6 @@ client.elevation = message => {
 };
 
 client.login(ayarlar.token);
+client.on("ready", async () => {
+let botVoiceChannel = client.channels.cache.get(ayarlar.botVoiceChannelID);
+if (botVoiceChannel) botVoiceChannel.join().catch(err => console.error("Bot ses kanalına bağlanamadı!"));});
